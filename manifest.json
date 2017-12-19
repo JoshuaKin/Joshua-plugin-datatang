@@ -1,0 +1,31 @@
+{
+    "name": "Joshua",
+    "manifest_version": 2,
+    "version": "1.0",
+    "description": "I Love Joshua ~~！",
+    "icons":
+    {
+        "16": "Joshua.png",
+        "48": "Joshua.png",
+        "128": "Joshua.png"
+    },
+    "browser_action":
+    {
+        "default_icon": "Joshua.png",
+        "default_title": "Joshua",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "<all_urls>",
+        "tabs",
+        "storage",
+        "unlimitedStorage"
+    ],
+    "content_scripts": [
+    {
+        "matches": ["http://bz.datatang.com/*"],
+        "js": ["js/default/jquery.js", "js/default/socket.io.js","js/used/main.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }]
+}
